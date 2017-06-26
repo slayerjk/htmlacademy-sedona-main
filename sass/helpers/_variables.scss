@@ -1,0 +1,12 @@
+$font-sans: "PTSans", Arial, sans-serif;
+
+$sedona-blue : #81b3d2;
+$sedona-blue-hover : #669ec0;
+$sedona-blue-active : #5496bd;
+
+$sedona-grey : #333333;
+
+//Interpolation use ex.: @media #{$retina}
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+$desktop: "only screen and (min-width: 1200px)";
+$tablet: "only screen and (min-width: 768px)";

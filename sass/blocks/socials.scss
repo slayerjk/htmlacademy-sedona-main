@@ -1,0 +1,58 @@
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 150px;
+}
+
+.socials__btn {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  text-indent: -10000px;
+  background-color:$sedona-blue;
+  &:hover {
+    background-color: $sedona-blue-hover;
+  }
+  &:hover .socials__icon {
+    fill: rgba(255, 255, 255, 1);
+  }
+  &:active {
+    background-color: $sedona-blue-active;
+  }
+  &:active .socials__icon {
+    fill: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.socials__icon {
+  display: block;
+  @include center-position();
+  fill: rgba(255, 255, 255, 0.9);
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .socials {
+    justify-content: space-between;
+    width: 150px;
+    margin-left: 17.2%;
+    padding-top: 0;
+  }
+}
+
+//Mini BP
+@media only screen and (min-width: 770px) {
+  .socials {
+    margin-left: 0%;
+  }
+}
+
+
+//Desktop version
+@media only screen and (min-width: 1200px) {
+  .socials {
+    margin-right: 100px;
+  }
+}

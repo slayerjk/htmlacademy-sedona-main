@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+}
+
+body {
+  min-width: 320px;
+  font-size: 0.625em;
+}
+
+audio,
+img,
+svg,
+video,
+{
+  display: block;
+  max-width: 100%;
+  height: auto
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}

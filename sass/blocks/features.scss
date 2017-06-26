@@ -1,0 +1,316 @@
+.features__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.features__item {
+  flex-basis: auto;
+  position: relative;
+  &--blue {
+    padding: {
+      top: 40px;
+      bottom: 37px;
+    }
+    background-color: $sedona-blue;
+  }
+  &--mobile-decor {
+    padding: {
+      top: 76px;
+      bottom: 41px;
+    }
+  }
+  &--grey {
+    padding: {
+      top: 28px;
+      bottom: 25px;
+    }
+    background-color: #eeeeee;
+    border-bottom: 1px solid #d6d6d6;
+  }
+  &--bg {
+    height: 260px;
+    padding: 0;
+    background-size: cover;
+  }
+  &--city {
+    background: #fff url('../img/photo-city-mobile@1x.jpg') no-repeat center;
+  }
+  &--bridge {
+    background: #fff url('../img/photo-bridge-mobile@1x.jpg') no-repeat center;
+  }
+  &--icon-desc {
+    padding: {
+      top: 28px;
+      left: 21.5625%; //69px;
+      right: 10%;
+    }
+  }
+  &--house {
+    padding-top: 34px;
+  }
+  &--burger {
+    padding-bottom: 37px;
+  }
+}
+
+.features__item-title {
+  margin-bottom: 10px;
+  font: bold 1.8em/1.4444444444em $font-sans; //18/26
+  text-align: center;
+  text-transform: uppercase;
+  &--white {
+    color: #fff;
+  }
+  &--icon {
+    margin-bottom: 15px;
+  }
+}
+
+.features__text-transfer {
+  display: none;
+}
+
+.features__item-desc {
+  font: 1.4em/1.5em $font-sans; //14/21
+  color: $sedona-grey;
+  text-align: center;
+  text-transform: uppercase;
+  &--white {
+    padding: 0 20px;
+    color: #fff;
+  }
+  &--number {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  &--grey {
+    padding: 0 35px;
+  }
+}
+
+.feature__gift-desc-text-transfer {
+  display: none;
+}
+
+.features__item-title--icon,
+.features__item-desc--icon {
+  text-align: left;
+}
+
+.features__item-icon {
+  position: absolute;
+  top: 23px;
+  left: 6.5%;
+  &--burger {
+    top: 14%;
+  }
+  &--gift {
+    top: 16%;
+  }
+}
+
+//Retina 320px
+@media only screen and (min-width: 320px) {
+  @media #{$retina} {
+    .features__item {
+      &--city {
+        background: #fff url('../img/photo-city-mobile@2x.jpg') no-repeat center;
+        background-size: cover;
+      }
+      &--bridge {
+        background: #fff url('../img/photo-bridge-mobile@2x.jpg') no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .features__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .features__item {
+    width: 33.33%;
+    height: 256px;
+    padding: 0;
+    border: none;
+    &--bg {
+      width: 66.67%;
+      background-size: cover;
+    }
+    &--icon-desc {
+      height: auto;
+      padding: 0;
+      padding-bottom: 62px;
+    }
+    &--town-desc {
+      order: 1;
+    }
+    &--city {
+      order: 2;
+      background: #fff url('../img/photo-city-tablet@1x.jpg') no-repeat center;
+    }
+    &--house {
+      order: 3;
+    }
+    &--gift {
+      order: 5;
+    }
+    &--burger {
+      order: 4;
+    }
+    &--bridge-desc {
+      order: 7;
+    }
+    &--bridge {
+      order: 6;
+      background: #fff url('../img/photo-bridge-tablet@1x.jpg') no-repeat center;
+    }
+    &--grey {
+      height: auto;
+      padding-bottom: 47px;
+    }
+    &--area {
+      order: 8;
+    }
+    &--road {
+      order: 9;
+    }
+    &--tourists {
+      order: 10;
+    }
+  }
+  @media #{$retina} {
+    .features__item {
+      &--city {
+        background: #fff url('../img/photo-city-tablet@2x.jpg') no-repeat center;
+        background-size: cover;
+      }
+      &--bridge {
+        background: #fff url('../img/photo-bridge-tablet@2x.jpg') no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+  .features__text-transfer {
+    display: inline-block;
+  }
+  .features__item-title {
+    font: bold 2.1em/1.2380952381em $font-sans; //21/26
+    text-align: center;
+    text-transform: uppercase;
+    &--white {
+      padding: {
+        top: 45px;
+        left: 8%; //20px;
+        right: 8%; //20px;
+      }
+    }
+    &--icon {
+      margin-bottom: 22px;
+      padding-top: 157px;
+    }
+    &--grey {
+      padding: {
+        top: 44px;
+        left: 19%;
+        right: 19%;
+      }
+    }
+  }
+  .features__item-desc {
+    &--number {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    &--white {
+      padding: 0 17%; //0 41px;
+    }
+    &--icon {
+      padding: 0 17.5%;
+      text-align: center;
+    }
+    &--burger {
+      padding: 0 19.5%;
+    }
+    &--grey {
+      padding: 0 19%;
+    }
+    &--road-desc {
+      padding: 0 24%;
+    }
+  }
+  .features__item-icon {
+    top: 55px;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translateX(-50%);
+  }
+}
+
+//Desktop version
+@media only screen and (min-width: 1200px) {
+  .features__item {
+    &--blue {
+      align-self: center;
+      height: 256px;
+    }
+    &--bg {
+      height: 256px;
+      padding: 0;
+    }
+    &--city {
+      background: #fff url('../img/photo-city-desktop@1x.jpg') no-repeat center;
+    }
+    &--bridge {
+      background: #fff url('../img/photo-bridge-desktop@1x.jpg') no-repeat center;
+    }
+    &--grey {
+      padding-bottom: 67px;
+    }
+    &--icon-desc {
+      padding-bottom: 83px;
+    }
+  }
+
+  .features__item-title {
+    &--white {
+      margin-bottom: 13px;
+      padding: {
+        top: 50px;
+        left: 100px; //20px;
+        right: 100px; //20px;
+      }
+    }
+    &--grey {
+      padding: {
+        top: 45px;
+        left: 120px;
+        right: 120px;
+      }
+    }
+  }
+  .features__item-desc {
+    &--icon {
+      padding: 0 50px;
+    }
+    &--bridge {
+      padding: 0 90px;
+    }
+    &--grey {
+      padding: 0 40px;
+    }
+    &--road-desc {
+      padding: 0 70px;
+    }
+  }
+  .feature__gift-desc-text-transfer {
+    display: inline-block;
+  }
+}

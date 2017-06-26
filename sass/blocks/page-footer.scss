@@ -1,0 +1,132 @@
+.page-footer__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: {
+    top: 37px;
+    left: 20px; //20
+    right: 20px; //20
+    bottom: 40px;
+  }
+  &--media {
+    padding: {
+      top: 122px;
+      bottom: 20px;
+    }
+  }
+  &--sedona-form {
+    padding: {
+      top: 40px;
+      bottom: 20px;
+    }
+  }
+}
+
+.page-footer__hashtag {
+  margin-bottom: 33px;
+  font: bold 2.1em/1.2380952381em $font-sans; //21/26
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-footer__desc {
+  font: 1.4em/1.8571428571em $font-sans; //14/26
+  color: $sedona-grey;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-footer__made-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 130px;
+  margin-top: 40px;
+}
+
+.page-footer__made-by-link {
+  width: 26.943px;
+  height: 34.09px;
+}
+
+.page-foote__htmlacademy-logo {
+  fill: #000;
+  &:hover {
+    fill: $sedona-blue;
+  }
+  &:active {
+    fill: lighten(#000, 50%);
+  }
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .page-footer__inner-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    padding: {
+      top: 35px;
+      bottom: 20px;
+      left: 8%;
+      right: 7.8%;
+    }
+    &--media {
+      padding-top: 11px;
+    }
+  }
+  .page-footer__hashtag {
+    padding-top: 10px;//44px;
+  }
+  .page-footer__made-by {
+    width: 130px;
+    margin-left: auto;
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+}
+
+//Mini BP
+@media only screen and (min-width: 770px) {
+  .page-footer__inner-wrapper {
+    justify-content: space-between;
+  }
+  .page-footer__made-by {
+    margin-left: 0;
+  }
+}
+
+//Desktop version
+@media only screen and (min-width: 1200px) {
+  .page-footer__inner-wrapper {
+    padding: {
+      top: 38px;
+      bottom: 12px;
+      left: 134px;
+      right: 45px;
+    }
+    &--media {
+      padding: {
+        top: 0px;
+        bottom: 5px;
+      }
+    }
+    &--form {
+      padding: {
+        top: 45px;
+      }
+    }
+  }
+
+  .page-footer__made-by {
+    width: 127px;
+    &--media {
+      padding-top: 0px;
+    }
+    &--form {
+      padding-top: 5px;
+    }
+  }
+}

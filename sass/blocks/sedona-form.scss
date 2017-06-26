@@ -1,0 +1,781 @@
+.sedona-form__wrapper {
+  padding: {
+    top: 0px;
+    bottom: 0px;
+  }
+}
+
+.sedona-form__sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sedona-form__section {
+  padding: {
+    top: 20px;
+    bottom: 33px;
+    left: 6.25%; //20
+    right: 6.25%; //20
+  }
+  border-top: 1px solid #d6d6d6;
+  &--title {
+    padding: {
+      top: 17px;
+      bottom: 25px;
+      left: 6.25%; //20
+      right: 6.25%; //20
+    }
+  }
+  &--select {
+    padding: {
+      right: 5%;
+    }
+  }
+}
+
+.sedona-form__block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 25px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.sedona-form__block--contacts {
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.sedona-form__title,
+.sedona-form__input {
+  font: bold 1.8em/1.4444444444em $font-sans; //18/26
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sedona-form__title {
+  margin-bottom: 23px;
+  &--select {
+    margin-bottom: 32px;
+  }
+}
+
+.sedona-form__cotacts-icon {
+  position: absolute;
+  top: 40%;
+  right: 0%;
+  width: 55px;
+  height: 51px;
+  &--tel {
+    background: #e6e6e6 url("../img/icons/icon-phone.svg") no-repeat center;
+  }
+  &--mail {
+    background: #e6e6e6 url("../img/icons/icon-mail.svg") no-repeat center;
+  }
+}
+
+.sedona-form__input {
+  width: 100%;
+  padding: {
+    top: 14px;
+    bottom: 14px;
+    left: 7.5%; //20px;
+    right: 7.5%; //20px;
+  }
+  text-align: left;
+  text-transform: capitalize;
+  @include placeholder {
+    color: #000;
+    text-align: left;
+    text-transform: none;
+  }
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  &:hover {
+    background-color: #e5e5e5;
+  }
+  &:focus {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    background-color: #fff;
+    border: 4px solid #e5e5e5;
+  }
+  &:disabled,
+  &--disabled {
+    color: #fff;
+    background-color: #e5e5e5;
+  }
+  &--error {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    background-color: #fff;
+    outline: 3px solid red;
+    @include placeholder {
+      font-size: 0.9em;
+      font-style: italic;
+      color: red;
+      text-align: left;
+      text-transform: none;
+    }
+  }
+}
+
+.sedona-form__label {
+  margin-right: 15px;
+  font: 1.4em/1.8571428571em $font-sans; //14/26
+  color: $sedona-grey;
+  text-transform: uppercase;
+  text-align: left;
+  &--contacts {
+    margin-bottom: 9px;
+    padding-left: 7.5%;
+  }
+}
+
+.sedona-form__text-transfer {
+  display: none;
+}
+
+.sedona-form__section--select {
+  padding-bottom: 44px;
+}
+
+.sedona-form__block--select {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 45px;
+}
+
+.sedona-form__input--radio,
+.sedona-form__input--checkbox {
+  display: none;
+}
+
+.sedona-form__label--select {
+  position: relative;
+  display: block;
+  padding-left: 28%;
+  margin-bottom: 0px;
+  font: bold 1.8em/1.4444444444em $font-sans; //18/26
+  color: #000;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.sedona-form__label--radio::before {
+  @include pseudo;
+  top: -47%;
+  left: 0%;
+  width: 55px;
+  height: 55px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+
+.sedona-form__input--radio[id="pro"]:checked+.sedona-form__label--radio[for="pro"]::after,
+.sedona-form__input--radio[id="contra"]:checked+.sedona-form__label--radio[for="contra"]::after,
+.sedona-form__input--radio[id="na"]:checked+.sedona-form__label--radio[for="na"]::after {
+  @include pseudo;
+  top: 5px;
+  left: 17px;
+  width: 21px;
+  height: 21px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.sedona-form__block--checkbox {
+  margin-bottom: 54px;
+}
+
+.sedona-form__label--checkbox::before {
+  @include pseudo;
+  top: -55%;
+  left: 0%;
+  width: 55px;
+  height: 55px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.sedona-form__input--checkbox[id="devil-bridge"]:checked+.sedona-form__label--checkbox[for="devil-bridge"]::after,
+.sedona-form__input--checkbox[id="slide-park"]:checked+.sedona-form__label--checkbox[for="slide-park"]::after,
+.sedona-form__input--checkbox[id="bell-mount"]:checked+.sedona-form__label--checkbox[for="bell-mount"]::after,
+.sedona-form__input--checkbox[id="red-rocks"]:checked+.sedona-form__label--checkbox[for="red-rocks"]::after {
+  @include pseudo;
+  top: 7px;
+  left: 15px;
+  width: 23px;
+  height: 16px;
+  background: transparent url("../img/icons/icon-tick.svg") no-repeat center;
+}
+
+.sedona-form__label--radio:hover::before,
+.sedona-form__label--checkbox:hover::before {
+  background-color: #e5e5e5;
+}
+
+.sedona-form__label--radio:active::before,
+.sedona-form__label--checkbox:active::before {
+  background-color: #d5d5d5;
+}
+
+.sedona-form__label--radio:active::after,
+.sedona-form__label--checkbox:active::after {
+  opacity: 0.3;
+}
+
+.sedona-form__title--emotions {
+  margin-bottom: 18px;
+}
+
+.sedona-form__describe-emotions {
+  width: 100%;
+  height: 153px;
+  padding: {
+    top: 14px;
+    bottom: 14px;
+    left: 7.5%; //20px;
+    right: 7.5%; //20px;
+  }
+  font: bold 1.8em/1.4444444444em $font-sans; //18/26
+  text-align: center;
+  text-transform: uppercase;
+  text-align: left;
+  text-transform: none;
+  @include placeholder {
+    color: #000;
+    text-align: left;
+    text-transform: none;
+  }
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  &:hover {
+    background-color: #e5e5e5;
+  }
+  &:focus {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+    background-color: #fff;
+    border: 4px solid #e5e5e5;
+  }
+}
+
+.sedona-form__section--submit {
+  padding-top: 22px;
+}
+
+.sedona-form__submit {
+  width: 100%;
+  padding: {
+    top: 18px;
+    bottom: 14px;
+  }
+}
+
+.sedona-form__require-text {
+  display: none;
+  font: 1.4em/1.8571428571em $font-sans; //14/26
+  color: $sedona-grey;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sedona-form__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.sedona-form__modal-win {
+  @include center-position;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 283px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 5px rgba(0, 0, 0, 0.3);
+  z-index: 101;
+  &--succsess,
+  &--error {
+    display: none;
+  }
+}
+
+.sedona-form__modal-win-title {
+  margin-bottom: 30px;
+  padding: {
+    top: 47px;
+  }
+  font: bold 1.8em/1.4444444444em $font-sans,
+  Arial,
+  sans-serif; //18/26
+  color: #000;
+  text-transform: uppercase;
+}
+
+.sedoan-form__modal-win-desc {
+  margin-bottom: 28px;
+  padding: {
+    left: 16%;
+    right: 16%;
+  }
+  font: 1.4em/1.7142857143em $font-sans,
+  Arial,
+  sans-serif; //14/24
+  color: #000;
+  text-transform: uppercase;
+  &--error {
+    margin-bottom: 20px;
+    padding: {
+      left: 13%;
+      right: 13%;
+    }
+  }
+}
+
+.sedona-form__modal-win-btn-section {
+  padding: {
+    top: 20px;
+    bottom: 20px;
+    left: 6.25%;
+    right: 6.25%;
+  }
+  background-color: #f2f2f2;
+  &--error {
+    padding: {
+      top: 0;
+      left: 22%;
+      right: 22%;
+    }
+    background-color: #fff;
+  }
+}
+
+.sedona-form__modal-win-btn {
+  width: 100%;
+  padding: {
+    top: 16px;
+    bottom: 16px;
+  }
+  font: bold 1.8em/1.4444444444em $font-sans,
+  Arial,
+  sans-serif;
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .sedona-form__wrapper {
+    padding: {
+      bottom: 62px;
+    }
+  }
+  .sedona-form__sections {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: {
+      left: 7.8125%; //60
+      right: 7.8125%; //60
+    }
+  }
+  .sedona-form__section {
+    width: 100%;
+    margin-bottom: 65px;
+    padding: 0;
+    padding: {
+      top: 8px;
+    }
+    border: none;
+    &--small {
+      width: auto;
+    }
+    &--introduce {
+      order: 2;
+    }
+    &--contacts {
+      order: 3;
+    }
+    &--impression {
+      order: 1;
+    }
+    &--sites {
+      order: 4;
+    }
+    &--emotions {
+      order: 5;
+    }
+    &--submit {
+      order: 6;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .sedona-form__title {
+    margin-bottom: 57px;
+    font: bold 2.1em/1.2380952381em $font-sans; //21/26
+    text-align: left;
+    &--empression {
+      margin-bottom: 73px;
+    }
+  }
+  .sedona-form__label--radio::before {
+    top: -55%;
+    left: 0.5%;
+  }
+  .sedona-form__input--radio[id="pro"]:checked+.sedona-form__label--radio[for="pro"]::after,
+  .sedona-form__input--radio[id="contra"]:checked+.sedona-form__label--radio[for="contra"]::after,
+  .sedona-form__input--radio[id="na"]:checked+.sedona-form__label--radio[for="na"]::after {
+    left: 6.8%;
+  }
+  .sedona-form__section--introduce {
+    position: relative;
+    width: 41%;
+    margin-left: auto;
+    &::before {
+      @include pseudo;
+      top: 4%;
+      left: -22%;
+      width: 1px;
+      height: 292px;
+      background-color: #dbdbdb;
+    }
+  }
+  .sedona-form__title--introduce {
+    margin-bottom: 56px;
+  }
+  .sedona-form__label--select {
+    margin-bottom: 6px;
+    padding-left: 27%;
+  }
+  .sedona-form__block--introduce {
+    margin-bottom: 21px;
+  }
+  .sedona-form__input {
+    padding: {
+      top: 16px;
+      bottom: 16px;
+    }
+    &:focus {
+      padding: {
+        top: 12px;
+        bottom: 12px;
+      }
+    }
+  }
+  .sedona-form__text-transfer {
+    display: inline-block;
+  }
+  .sedona-form__title--decor {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: center;
+    &::after,
+    &::before {
+      @include pseudo;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20%;
+      height: 1px;
+      background-color: #dbdbdb;
+    }
+    &::before {
+      left: 0%;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+  .sedona-form__section--contacts {
+    margin-bottom: 45px;
+  }
+  .sedona-form__block--contacts {
+    margin-bottom: 28px;
+  }
+  .sedona-form__label--contacts,
+  .sedona-form__input--contacts {
+    padding: {
+      left: 3.5%;
+    }
+  }
+  .sedona-form__label--contacts {
+    margin-bottom: 5px;
+  }
+  .sedona-form__cotacts-icon {
+    top: 35%;
+    height: 55px;
+  }
+  .sedona-form__section--sites {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .sedona-form__block {
+    &--sites {
+      width: auto;
+      margin-right: 3.5%;
+    }
+    &--site-bridge {
+      order: 1;
+      padding-left: 27%;
+    }
+    &--site-park {
+      order: 3;
+      padding-left: 27%;
+    }
+    &--site-mount {
+      order: 2;
+      padding-right: 4%;
+    }
+    &--site-rocks {
+      order: 4;
+      padding-right: 4%;
+    }
+  }
+
+  .sedona-form__title--sites {
+    width: 100%;
+    margin-bottom: 55px;
+  }
+  .sedona-form__label--checkbox {
+    width: 150px;
+    padding: 0;
+    text-align: left;
+  }
+  .sedona-form__label--checkbox::before {
+    @include pseudo;
+    top: -50%;
+    left: -52.7%;
+  }
+  .sedona-form__input--checkbox[id="devil-bridge"]:checked+.sedona-form__label--checkbox[for="devil-bridge"]::after,
+  .sedona-form__input--checkbox[id="slide-park"]:checked+.sedona-form__label--checkbox[for="slide-park"]::after,
+  .sedona-form__input--checkbox[id="bell-mount"]:checked+.sedona-form__label--checkbox[for="bell-mount"]::after,
+  .sedona-form__input--checkbox[id="red-rocks"]:checked+.sedona-form__label--checkbox[for="red-rocks"]::after {
+    left: -40%;
+  }
+  .sedona-form__section--emotions {
+    margin-bottom: 60px;
+  }
+  .sedona-form__title--emotions {
+    margin-bottom: 59px;
+  }
+  .sedona-form__describe-emotions {
+    height: 159px;
+    padding: 15px 3%;
+  }
+  .sedona-form__section--submit {
+    margin-bottom: 0px;
+    padding: 0;
+  }
+  .sedona-form__submit {
+    width: 50%;
+    padding-right: 2.5%;
+    font: bold 2.1em/1.2380952381em $font-sans, Arial, sans-serif; //21/26
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .sedona-form__require-text {
+    width: 50%;
+    display: block;
+    padding-top: 18px;
+    text-align: right;
+  }
+  .sedona-form__modal-win {
+    width: 648px;
+    &--error {
+      width: 400px;
+    }
+  }
+  .sedona-form__modal-win-title {
+    margin-bottom: 33px;
+    font-size: 3em;
+    line-height: 0.8666666667em; //26
+  }
+  .sedona-form__modal-win-btn-section {
+    padding: {
+      top: 40px;
+      bottom: 40px;
+      left: 95px;
+      right: 95px;
+    }
+    &--error {
+      padding: {
+        left: 65px;
+        right: 65px;
+      }
+    }
+  }
+  .sedona-form__modal-win-btn {
+    font: bold 2.1em/1.2380952381em $font-sans, Arial, sans-serif;
+  }
+}
+
+//Desktop version
+@media only screen and (min-width: 1200px) {
+  .sedona-form__wrapper {
+    padding: {
+      bottom: 0px;
+    }
+  }
+  .sedona-form__sections {
+    padding: {
+      left: 120px; //60
+      right: 120px; //60
+    }
+  }
+  .sedona-form__section {
+    margin-bottom: 58px;
+  }
+  .sedona-form__title--empression {
+    padding-left: 80px;
+  }
+  .sedona-form__label--radio {
+    padding-left: 80px;
+  }
+  .sedona-form__label--radio::before {
+    left: 5px;
+  }
+  .sedona-form__input--radio[id="pro"]:checked+.sedona-form__label--radio[for="pro"]::after,
+  .sedona-form__input--radio[id="contra"]:checked+.sedona-form__label--radio[for="contra"]::after,
+  .sedona-form__input--radio[id="na"]:checked+.sedona-form__label--radio[for="na"]::after {
+    left: 21px;
+  }
+  .sedona-form__section--introduce {
+    width: 400px;
+    &::before {
+      @include pseudo;
+      top: 12px;
+      left: -80px;
+      width: 1px;
+      height: 292px;
+      background-color: #dbdbdb;
+    }
+  }
+  .sedona-form__title--introduce {
+    margin-bottom: 60px;
+  }
+  .sedona-form__input {
+    padding-left: 21px;
+  }
+  .sedona-form__section--contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .sedona-form__title--decor {
+    flex-basis: 100%;
+    &::after,
+    &::before {
+      width: 278px;
+    }
+  }
+  .sedona-form__title--contacts {
+    margin-bottom: 75px;
+  }
+  .sedona-form__text-to-disable {
+    display: none;
+  }
+  .sedona-form__block--contacts {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .sedona-form__input--contacts {
+    width: 318px;
+  }
+  .sedona-form__label--contacts {
+    width: auto;
+    padding-left: 0;
+    padding-top: 18px;
+  }
+  .sedona-form__cotacts-icon {
+    top: 0;
+    right: 0;
+  }
+  .sedona-form__section--sites {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 72px;
+    padding: {
+      right: 0;
+    }
+  }
+  .sedona-form__block {
+    &--sites {
+      width: auto;
+      margin: 0;
+      margin-right: 150px;
+      padding: 0;
+    }
+    &--site-bridge {
+      padding-left: 80px;
+    }
+    &--site-mount {
+      padding-left: 0;
+    }
+    &--site-park {
+      margin-right: 0;
+      padding-right: 0;
+    }
+    &--site-rocks {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  .sedona-form__label--checkbox {
+    width: auto;
+    margin: 0;
+  }
+  .sedona-form__label--checkbox::before {
+    left: -79px;
+  }
+  .sedona-form__input--checkbox[id="devil-bridge"]:checked+.sedona-form__label--checkbox[for="devil-bridge"]::after,
+  .sedona-form__input--checkbox[id="slide-park"]:checked+.sedona-form__label--checkbox[for="slide-park"]::after,
+  .sedona-form__input--checkbox[id="bell-mount"]:checked+.sedona-form__label--checkbox[for="bell-mount"]::after,
+  .sedona-form__input--checkbox[id="red-rocks"]:checked+.sedona-form__label--checkbox[for="red-rocks"]::after {
+    left: -63px;
+  }
+  .sedona-form__section--emotions {
+    margin-bottom: 59px;
+  }
+  .sedona-form__describe-emotions {
+    height: 161px;
+    padding-left: 20px;
+  }
+
+  .sedona-form__submit {
+    padding-right: 0;
+  }
+}

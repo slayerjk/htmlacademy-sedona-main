@@ -1,0 +1,134 @@
+.main-nav {
+  position: relative;
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-nav__toggle-btn {
+  display: none;
+  position: absolute;
+  top: 13px;
+  right: 6%;
+  width: 22px; //22.928px
+  height: 24px; //21.982px
+  background: transparent url("../img/icons/icon-menu.svg") no-repeat center;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.main-nav__toggle-btn--js-active {
+  background-image: url("../img/icons/icon-cross.svg");
+}
+
+.main-nav__link {
+  width: auto;
+  padding: {
+    top: 8px;
+    bottom: 7px;
+  }
+  font: bold 1.8em/2.2222222222em $font-sans; //18/40
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $sedona-blue;
+  border-top: 1px solid #9ac2db;
+  border-bottom: 1px solid #678fa8;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: #669ec0;
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #5496bd;
+  }
+}
+
+.main-nav__item--logo {
+  position: relative;
+  width: 102px; //101.668px
+  min-height: 59px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.main-nav__item--logo-not-index {
+  min-height: 56px;
+}
+
+.main-nav__logo-link {
+  position: absolute;
+  width: 102px; //101.668px
+  min-height: 84px; //83.984px
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .main-nav__list {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .main-nav__item {
+    width: 20%;
+  }
+  .main-nav__item--form {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .main-nav__link {
+    padding: {
+      top: 15px;
+      bottom: 15px;
+    }
+    font: bold 1.4em/1.8571428571em $font-sans; //14/26
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    &:hover {
+      color: $sedona-blue;
+      background-color: #fff;
+    }
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+    }
+  }
+
+  .main-nav__link--active {
+    color: #766357;
+    &:hover {
+      color: #604e43;
+    }
+    &:active {
+      color: lighten(#766357,40%);
+    }
+  }
+
+  .main-nav__item--logo {
+    position: absolute;
+    width: 102px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+//Desktop
+@media #{$desktop} {
+  .main-nav__item--logo {
+    width: 187px;
+  }
+  .main-nav__logo-link,
+  .main-nav__logo-img {
+    width: 187px;
+    height: 97px;
+  }
+}

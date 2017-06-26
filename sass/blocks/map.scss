@@ -1,0 +1,52 @@
+.map__google-link {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  height: 350px;
+  background: #fff url('../img/bg-map-mobile@1x.jpg') no-repeat center;
+  background-size: cover;
+  &::after {
+    content: "";
+    @include center-position;
+    width: 27px;
+    height: 27px;
+    background: transparent url("../img/icons/icon-map-marker.svg") no-repeat center;
+  }
+}
+
+//Retina 320px
+@media only screen and (min-width: 320px) {
+  @media #{$retina} {
+    .map__google-link {
+      background: #fff url('../img/bg-map-mobile@2x.jpg') no-repeat center;
+      background-size: 320px auto;
+    }
+  }
+}
+
+//Tablet version
+@media only screen and (min-width: 768px) {
+  .map__google-link {
+    max-width: 100%;
+    background: #fff url('../img/bg-map-tablet@1x.jpg') no-repeat center;
+  }
+  @media #{$retina} {
+    .map__google-link {
+      background: #fff url('../img/bg-map-tablet@2x.jpg') no-repeat center;
+      background-size: 768px auto;
+    }
+  }
+}
+
+//Desktop version
+@media only screen and (min-width: 1200px) {
+  .map__google-link {
+    background: #fff url('../img/bg-map-desktop@1x.jpg') no-repeat center;
+  }
+  @media #{$retina} {
+    .map__google-link {
+      background: #fff url('../img/bg-map-desktop@2x.jpg') no-repeat center;
+      background-size: 1200px auto;
+    }
+  }
+}

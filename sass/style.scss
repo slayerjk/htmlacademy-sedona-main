@@ -1,0 +1,20 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+@import 'global/normalize.scss';
+@import 'global/fonts.scss';
+@import 'global/common-styles.scss';
+
+@import 'blocks/body-wrapper.scss';
+@import 'blocks/wrapper-center.scss';
+@import 'blocks/btn.scss';
+@import 'blocks/page-header.scss';
+@import 'blocks/main-nav.scss';
+@import 'blocks/intro.scss';
+@import 'blocks/features.scss';
+@import 'blocks/search-hotel.scss';
+@import 'blocks/map.scss';
+@import 'blocks/media.scss';
+@import 'blocks/sedona-form.scss';
+@import 'blocks/page-footer.scss';
+@import 'blocks/socials.scss';
