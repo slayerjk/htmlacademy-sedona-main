@@ -13,20 +13,31 @@ $(document).ready(function () {
   };
 
   /*sedona page-header menu button behaviour */
-  var
-    ScreenWidth = screen.width,
-    ScreenHeight = screen.height;
-
-  if (ScreenWidth < '768') {
-    $('.main-nav__list').hide();
-    $('.main-nav__toggle-btn').show();
-  }
+  
+  $(window).resize(function () {
+    var w = $(window).width();
+    if (w < 768) {
+      $('.main-nav__toggle-btn').show();
+      if (w < 768 && $('.main-nav__list').hide()) {
+        $('.main-nav__toggle-btn').removeClass('main-nav__toggle-btn--js-active');
+        $('.main-nav__list').hide();
+      } else if (w < 768 && $('.main-nav__list').show()) {
+        $('.main-nav__toggle-btn').addClass('main-nav__toggle-btn--js-active');
+      }
+    } else if (w >= 768) {
+      $('.main-nav__list').show();
+      $('.main-nav__toggle-btn').hide();
+    }
+  });
 
   $('.main-nav__toggle-btn').on('click', function () {
+    event.preventDefault();
+    
     $('.main-nav__toggle-btn').toggleClass('main-nav__toggle-btn--js-active');
     $('.main-nav__list').slideToggle('slow');
   });
-
+  
+  
   /*sedona-form modal windows */
   $('.sedona-form__overlay, .sedona-form__modal-win').hide();
   $('.sedona-form__modal-win-btn').on('click', function () {
