@@ -3,15 +3,6 @@
 $(document).ready(function () {
   'use strict';
 
-  //event.preventDefault() polyfill for  IE9+
-  $.fn.eventPreventDefaultSafe = function () {
-    if (event.preventDefault) {
-      event.preventDefault();
-    } else {
-      event.returnValue = false;
-    }
-  };
-
   /*sedona page-header menu button behaviour */
   
   $(window).resize(function () {
@@ -39,28 +30,34 @@ $(document).ready(function () {
   
   
   /*sedona-form modal windows */
-  $('.sedona-form__overlay, .sedona-form__modal-win').hide();
   $('.sedona-form__modal-win-btn').on('click', function () {
     $('.sedona-form__modal-win').fadeOut('fast');
     $('.sedona-form__overlay').hide();
   });
-
-  $('.sedona-form__submit').click(function (e) {
-    $('.sedona-form__input--js-required').each(function () {
-      if (!$(this).val()) {
-        $('.sedona-form__overlay').show();
-        $('.sedona-form__modal-win--error').fadeIn('slow');
+  
+  function checkInput() {
+    $('.sedona-form__js-form').find('.sedona-form__input--js-required').each(function () {
+      if ($(this).val() === '') {
         $(this).addClass('sedona-form__input--error').prop('placeholder', 'Поле обязателно');
-        $.fn.eventPreventDefaultSafe();
-      } else {
-        $.fn.eventPreventDefaultSafe();
-        $('.sedona-form__overlay').show();
-        $('.sedona-form__modal-win--succsess').fadeIn('slow');
-        $('.sedona-form__modal-win-btn').on('click', function () {
-          $('.sedona-form__js-form').submit();
-        });
+      } else if ($(this).val() !== '') {
+        $(this).removeClass('sedona-form__input--error');
       }
     });
+  }
+  
+  $('.sedona-form__submit').click(function (event) {
+    event.preventDefault(event);
+    $('.sedona-form__overlay').show();
+    checkInput();
+    if ($('.sedona-form__input--error').length > 0) {
+      $('.sedona-form__submit').removeClass('error-state');
+      $('.sedona-form__modal-win--error').fadeIn();
+    } else if ($('.sedona-form__input--error').length === 0) {
+      $('.sedona-form__modal-win--succsess').fadeIn();
+      $('.sedona-form__modal-win-btn').on('click', function () {
+        $('.sedona-form__js-form').submit();
+      });
+    }
   });
-
+  
 });
